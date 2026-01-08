@@ -1,0 +1,24 @@
+# Simple Text Template Format
+# Lines starting with # are comments
+
+# Template Information
+name=d&b Audiotechnik
+description=d&b line array rigging template
+
+# PA Table Columns (true/false)
+type=true
+circuit=false
+
+# Rigging Table Rows
+# Format: label | unit | visible | placeholder | colspan | toggleId
+# Use FALSE for unit if no unit needed
+# colspan and toggleId are optional
+
+rigcell=FRAME ANGLE | ° | true
+rigcell=TRIM - TOP | m | true
+rigcell=TRIM - BOTTOM | m | true
+rigcell=TRIM - STAGE | m | false | | | trimStage
+rigcell=TOTAL LOAD | kg | true
+rigcell=FRONT LOAD | kg | true
+rigcell=REAR LOAD | kg | true
+rigcell=SINGLE POINT | FALSE | false | HOLE# | true | singlePoint

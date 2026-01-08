@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="js/window-init.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link href="lib/winjs-4.0.1/css/ui-light.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="lib/winjs-4.0.1/js/base.js"></script>
+    <script src="lib/winjs-4.0.1/js/ui.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/col_toggle.js"></script>
+    <script src="js/logo.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/filemanagement.js"></script>
+    <link href="css/default.css" rel="stylesheet" />
+    <link href="css/button.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    
+    <link rel="stylsheet" type="text/css" media="print" href="css/print.css">
+</head>
+<body class="win-type-body">
+
+    <!--Nav Bar-->
+    <ul class="navbar">
+        <img align="left" src="images/logo.png"  top:15px; padding-right:50;"  width="40" height="40" >
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">FILE</a>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <td>
+                            <input id="fileInput" style="display:none" type="file">
+                            <label class="btn" for="fileInput">LOAD</label>                     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn" href="#" id="downloadLink">SAVE</a>                    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="button7" class="btn">PRINT</button>
+                            
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type='file' id="addLogo" onchange="readURL(this);"  /> 
+                            <label class="btn" for="addLogo">ADD LOGO</label>                     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="button40" type="button" class="btn" value="REMOVE LOGO" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" class="btn" value="EXIT" onClick="self.close();">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+ <!--       <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">TEMPLATES</a>
+            <div class="dropdown-content">
+                <table>
+                                        <tr>
+                        <td>                           
+                            <button class="btn"  onclick="setTemplate('_tplt_martin.html')">MARTIN AUDIO WP</button>                          
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>                           
+                            <button class="btn"  onclick="setTemplate('_tplt_generic.html')">GENERIC</button>                          
+                        </td>
+                    </tr>                   
+                    <tr>
+                        <td>                           
+                            <button class="btn"  onclick="setTemplate('_tplt_jbl.html')">JBL VTX</button>                          
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="sysTxt" placeholder="GENERIC"><button type="submit" id="button21" class="btn" style="visibility: hidden;"></button>
+                            ADD ID
+                        </td>
+                    </tr>
+                
+                </table>
+            </div>
+-->            
+        </li>
+         <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">?</a>
+            <div class="dropdown-content">
+                <h3>&nbsp; RSD</h3>
+                <p>
+                    Use RSD to quickly create formatted tables for rigging PA systems.<br />
+                    Select your number of boxes under MAIN + SIDE PA and number per case/cart/dolly then ADD it into your table.<br />
+                    Alternatively build your table manually with ADD BOX + ADD SPLIT.<br />
+                    A SPLIT is a visual cue denoting where one case/cart/dolly ends and another begins. <br />
+                    Select a RIG TEMPLATE for a pre-formatted RIGGING section applicable to your PA System, or use ADD RIGGING to create your own options to the GENERIC template. <br />
+                    Add a SYSTEM ID to the bottom of the page for reference.<br />
+                    Fill in the data fields and print out before your show, or print out blank sheets to fill out manually at the venue.
+                </p>
+            </div>
+        </li>
+    </ul>
+
+    <!--Sidebar-->
+    <div class="sidebar">
+        <h3 class="collapsible-header" onclick="toggleSection('array1')">
+            <span id="array1-icon">▶</span> ARRAY 1
+        </h3>
+        <div id="array1-content" class="collapsible-content">
+            <div style="margin-bottom: 10px; padding: 10px; background-color: #404040; border-radius: 4px;">
+                <label style="font-size: 0.9em; color: white; margin-bottom: 5px; display: block;">TEMPLATE</label>
+                <select id="templateSelectorMain" style="width: 100%; padding: 5px;">
+                    <option value="manual">Manual</option>
+                </select>
+            </div>
+          <div style="margin-top: 10px; padding: 5px; background-color: #404040; border-radius: 4px;">
+    <table>
+                <tr>
+                    <td>
+                        <input maxlength="3" size="2" min="1" max="24" type="number" id="numBoxesMain" placeholder="ADD BOXES">
+                    </td>
+                    <td>
+                        <input type="number" id="numPerCaseMain" placeholder="# PER CASE" max="5">
+                    </td>
+                    <td>
+                        <button id="button10" class="btn">ADD</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 33.33%;">
+                        <button id="button1" class="btn">+ CABINET</button>
+                    </td>
+                    <td style="width: 33.33%;">
+                        <button id="button3" class="btn">+ SPLIT</button>
+                    </td>
+                    <td style="width: 33.33%;">
+                        <button id="button5" class="btn">-</button>
+                    </td>
+                </tr>
+
+<!--               <tr>
+                    <td colspan="3">
+                        <button id="button8" class="btn">ADD RIGGING</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <button id="button15" class="btn">REMOVE RIGGING</button>
+                    </td>
+                </tr>
+                --> 
+            </table>
+            </div>
+                  <div style="margin-top: 10px; padding: 5px; background-color: #404040; border-radius: 4px;">
+                         <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="typeColumnToggleMain" checked style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Show Type</span>
+                </label>
+            </div>
+                        <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="circuitColumnToggleMain" checked style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Show Circuit</span>
+                </label>
+            </div>
+            <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="singlePointToggleMain" style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Single Point</span>
+                </label>
+            </div>
+            <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="showFrontRearLoadMain" style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Show Front/Rear Load</span>
+                </label>
+            </div>
+            <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="trimStageToggleMain" style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Trim - Stage</span>
+                </label>
+            </div>
+            </div>
+        </div>
+
+        <h3 class="collapsible-header" onclick="toggleSection('array2')">
+            <span id="array2-icon">▶</span> ARRAY 2
+        </h3>
+        <div id="array2-content" class="collapsible-content">
+            <div style="margin-bottom: 10px; padding: 5px; background-color: #404040; border-radius: 4px;">
+                <label style="font-size: 0.9em; color: white; margin-bottom: 5px; display: block;">TEMPLATE</label>
+                <select id="templateSelectorSide" style="width: 100%; padding: 5px;">
+                    <option value="manual">Manual</option>
+                </select>
+            </div>
+         <div style="margin-top: 10px; padding: 5px; background-color: #404040; border-radius: 4px;">
+     <table>
+                <tr>
+                    <td>
+                        <input type="number" id="numBoxesSide" placeholder="ADD BOXES" max="24">
+                    </td>
+                    <td>
+                        <input type="number" id="numPerCaseSide" placeholder="# PER CASE" max="5">
+                    </td>
+                    <td>
+                        <button id="button12" class="btn">ADD</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 33.33%;">
+                        <button id="button2" class="btn">+ CABINET</button>
+                    </td>
+                    <td style="width: 33.33%;">
+                        <button id="button4" class="btn">+ SPLIT</button>
+                    </td>
+                    <td style="width: 33.33%;">
+                        <button id="button6" class="btn">-</button>
+                    </td>
+                </tr>
+ <!--               <tr>
+                    <td colspan="3">
+                        <button id="button9" class="btn">ADD RIGGING</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <button id="button16" class="btn">REMOVE RIGGING</button>
+                    </td>
+                </tr>
+                -->
+            </table>
+            </div>
+
+                    <div style="margin-top: 10px; padding: 5px; background-color: #404040; border-radius: 4px;">
+            <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="typeColumnToggleSide" checked style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Show Type</span>
+                </label>
+            </div>
+                        <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="circuitColumnToggleSide" checked style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Show Circuit</span>
+                </label>
+            </div>
+            <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="singlePointToggleSide" style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Single Point</span>
+                </label>
+            </div>
+            <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="showFrontRearLoadSide" style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Show Front/Rear Load</span>
+                </label>
+            </div>
+            <div>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="trimStageToggleSide" style="width: auto; margin-right: 10px;">
+                    <span style="font-size: 0.9em;">Trim - Stage</span>
+                </label>
+            </div>
+            </div>
+        </div>
+<div style="margin-top: 10px; padding: 5px; background-color: #404040; border-radius: 4px;">
+                    <tr>
+                        <td>
+                            <a class="btn" href="main.html">RESET</a>
+                        </td>
+                    </tr>
+</div>
+        </div>
+
+
+    </div>
+
+    <div class="main-content">
+    
+<!--TEMPLATE-->
+<div id="template" data-includeHTML="generic.html"></div>
+     <!--SYSTEM TYPE IDENTIFIER-->   
+     <br> 
+     <footer id="footer"></footer>
+    </div> 
+
+
+
+</body>
+</html>

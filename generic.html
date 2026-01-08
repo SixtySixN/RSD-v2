@@ -1,0 +1,226 @@
+
+
+<div id="printArea" class="printA4" align="center">
+    <div class="col-container">
+        <div class="col">
+            <table class="headertbl" id="headertbl" width="400">
+                <tbody>
+                    <tr>
+                        <td class="infocellid" >PRODUCTION&nbsp;</td>
+                        <td><input type="text" class="infocell"></td>
+                        <td class="logo" rowspan="3" width="1px"><img id="logo" src="" alt="" onerror="this.src='images/DFB.png';" /></td>
+                        <tr>
+                                <td class="infocellid">VENUE&nbsp;</td>
+                                <td><input type="text" class="infocell"></td>
+                            </tr>
+                          
+                    <tr>
+                        <td class="infocellid">DATE&nbsp;</td>
+                        <td><input type="text" class="infocell"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <br>
+
+<!-- TEMPLATE CODE STARTS HERE -->
+<div class="col-container" data-role="main" class="ui-content">
+<div class="col">
+<!--MAIN PA TABLE-->
+
+    <table class="patable" id="mainpatblhead">
+        <colgroup>
+            <col class="col-cabinet" style="width: 14%;">
+            <col class="col-type" style="width: 20%;">
+            <col class="col-splay" style="width: 40%;">
+            <col class="col-circuit" style="width: 26%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="paheader" colspan="4"><input type="text" class="paheader" value="MAIN PA" /></th>
+            </tr>
+            <tr>
+                <th class="paheader papoint" colspan="4">
+                    <input type="text" class="paheader papoint" value="FRONT |   X                              |   Y        " />
+            <tr>
+                <th class="paheader papoint" colspan="4">
+                    <input type="text" class="paheader papoint" value="REAR   |   X                              |   Y        " />
+                </th>
+            </tr>
+            <tr>
+                <th class="cabinet">#</th>
+                <th class="type">TYPE</th>
+                <th class="splay">ANGLE</th>
+                <th class="circuit">CIRCUIT</th>
+            </tr>
+        </thead>
+    </table>
+  <table class="patable" id="mainpatbl" margin="50px">   
+        <colgroup>
+            <col class="col-cabinet" style="width: 14%;">
+            <col class="col-type" style="width: 20%;">
+            <col class="col-splay" style="width: 40%;">
+            <col class="col-circuit" style="width: 26%;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <td name="CABINET #" class="cabinet" data-priority="1"></td>
+                <td class="type"><input type="text" name="TYPE" class="type" data-priority="2"/></td>
+                <td class="splay"><input type="text"  name="SPLAY ANGLE" class="splay" data-priority="3"/></td>
+                <td class="circuit"><input type="text" name="CIRCUIT" class="circuit" data-priority="4"/></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="col">
+<!--SIDE PA TABLE-->
+
+    <table class="patablehead" id="sidepatblhead">
+        <colgroup>
+            <col class="col-cabinet" style="width: 14%;">
+            <col class="col-type" style="width: 20%;">
+            <col class="col-splay" style="width: 40%;">
+            <col class="col-circuit" style="width: 26%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="paheader" colspan="4"><input type="text" class="paheader" value="SIDE PA" /></th>
+            </tr>
+            <tr>
+                <th class="paheader papoint" colspan="4">
+                    <input type="text" class="paheader papoint" value="FRONT |   X                              |   Y        " />
+            <tr>
+                <th class="paheader papoint" colspan="4">
+                    <input type="text" class="paheader papoint" value="REAR   |   X                              |   Y        " />
+                </th>
+            </tr>    
+            <tr>
+                <th class="cabinet">#</th>
+                <th class="type">TYPE</th>
+                <th class="splay">ANGLE</th>
+                <th class="circuit">CIRCUIT</th>
+            </tr>
+        </thead>
+    </table>
+    <table class="patable" id="sidepatbl">   
+        <colgroup>
+            <col class="col-cabinet" style="width: 14%;">
+            <col class="col-type" style="width: 20%;">
+            <col class="col-splay" style="width: 40%;">
+            <col class="col-circuit" style="width: 26%;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <td name="CABINET #" class="cabinet"></td>
+                <td class="type"><input type="text" name="TYPE" class="type" /></td>
+                <td class="splay"><input type="text" name="SPLAY ANGLE" class="splay" /></td>
+                <td class="circuit"><input type="text" name="CIRCUIT" class="circuit" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<br>
+
+<!--GENERIC MAIN RIGGING TABLE-->
+<div class="col-container">
+    <div class="col">
+        <table class="rigtable" id="mainrigtbl">
+            <tbody>
+                <tr>
+                    <td class="rigcell">FRAME ANGLE&nbsp;</td>
+                    <td class="rigcell1"><input type="text" class="rig1" /></td>
+                    <td class="unitscell">&ordm;</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">TRIM - TOP&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">m</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">TRIM - BOTTOM&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">m</td>
+                </tr>
+                                                <tr style="display:none;">
+                    <td class="rigcell">&nbsp;TRIM - STAGE&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">m</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">TOTAL LOAD&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">kg</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">FRONT LOAD&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">kg</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">REAR LOAD&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">kg</td>
+                </tr>
+                                <tr style="display:none;">
+                    <td class="rigcell">SINGLE POINT&nbsp;</td>
+                    <td class="rigcell1" colspan="2"><input class="rig2" type="text" placeholder="HOLE#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--GENERIC SIDE RIGGING TABLE-->
+    <div class="col">
+        <table class="rigtable" id="siderigtbl">
+            <tbody>
+                <tr>
+                    <td class="rigcell">FRAME ANGLE&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">&ordm;</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">TRIM - TOP&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">m</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">TRIM - BOTTOM&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">m</td>
+                </tr>
+                                                                <tr style="display:none;">
+                    <td class="rigcell">&nbsp;TRIM - STAGE&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">m</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">TOTAL LOAD</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">kg</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">FRONT LOAD&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">kg</td>
+                </tr>
+                <tr>
+                    <td class="rigcell">REAR LOAD&nbsp;</td>
+                    <td class="rigcell1"><input class="rig1" type="text" /></td>
+                    <td class="unitscell">kg</td>
+                </tr>
+
+
+                                <tr style="display:none;">
+                    <td class="rigcell">SINGLE POINT&nbsp;</td>
+                    <td class="rigcell1" colspan="2"><input class="rig2" type="text" placeholder="HOLE#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" /></td>
+                </tr>    
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</div>

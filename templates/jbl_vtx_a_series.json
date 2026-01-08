@@ -1,0 +1,59 @@
+{
+  "name": "JBL VTX A Series",
+  "description": "JBL VTX series template",
+  "paColumns": {
+    "type": true,
+    "circuit": true
+  },
+  "rigging": [
+    {
+      "label": "FRAME ANGLE",
+      "unit": "°",
+      "visible": true
+    },
+    {
+      "label": "TRIM - TOP",
+      "unit": "m",
+      "visible": true
+    },
+    {
+      "label": "TRIM - BOTTOM",
+      "unit": "m",
+      "visible": true
+    },
+    {
+      "label": "TRIM - STAGE",
+      "unit": "m",
+      "visible": false
+    },
+    {
+      "label": "TOTAL LOAD",
+      "unit": "kg",
+      "visible": true
+    },
+    {
+      "label": "FRONT LOAD",
+      "unit": "kg",
+      "visible": true
+    },
+    {
+      "label": "REAR LOAD",
+      "unit": "kg",
+      "visible": true
+    },
+    {
+      "label": "EXTENSION BAR",
+      "unit": false,
+      "visible": true,
+      "placeholder": "A/B/C"
+    },
+    {
+      "label": "SINGLE POINT",
+      "unit": false,
+      "visible": false,
+      "toggleId": "singlePoint",
+      "placeholder": "HOLE#",
+      "colspan": true
+    }
+  ]
+}

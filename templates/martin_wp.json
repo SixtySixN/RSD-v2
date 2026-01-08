@@ -1,0 +1,53 @@
+{
+  "name": "Martin Audio Wavefront Precision",
+  "description": "Martin Audio WP series template",
+  "paColumns": {
+    "type": false,
+    "circuit": true
+  },
+  "rigging": [
+    {
+      "label": "FRAME ANGLE",
+      "unit": "°",
+      "visible": true
+    },
+    {
+      "label": "TRIM - TOP",
+      "unit": "m",
+      "visible": true
+    },
+    {
+      "label": "TRIM - BOTTOM",
+      "unit": "m",
+      "visible": true
+    },
+        {
+      "label": "TRIM - STAGE",
+      "unit": "m",
+      "visible": false
+    },
+    {
+      "label": "TOTAL LOAD",
+      "unit": "kg",
+      "visible": true
+    },
+    {
+      "label": "FRONT LOAD",
+      "unit": "kg",
+      "visible": true
+    },
+    {
+      "label": "REAR LOAD",
+      "unit": "kg",
+      "visible": true
+    },
+    {
+      "label": "SINGLE POINT",
+      "unit": false,
+      "visible": false,
+      "toggleId": "singlePoint",
+      "placeholder": "HOLE#",
+      "colspan": true
+    }
+  ]
+}

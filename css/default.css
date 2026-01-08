@@ -1,0 +1,538 @@
+﻿body {
+    margin-top: 20px;
+    touch-action: manipulation;
+    background-color: #808080;
+    font-family: 'Josefin Sans', sans-serif;
+    overflow: auto;
+    line-height: 1px;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 280px;
+    height: calc(100vh - 60px);
+    background-color: #505050;
+    padding: 15px;
+    overflow-y: auto;
+    z-index: 100;
+    color: #ffffff;
+}
+
+.sidebar h3 {
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sidebar .collapsible-header {
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+    background-color: #404040;
+    border-radius: 4px;
+}
+
+.sidebar .collapsible-content {
+    display: none;
+}
+
+.sidebar table {
+    width: 100%;
+    border: none;
+}
+
+.sidebar td {
+    border: none;
+    padding: 2px;
+}
+
+.sidebar input {
+    width: 100%;
+    margin: 2px 0;
+}
+
+.sidebar button {
+    width: 100%;
+    margin: 2px 0;
+    font-size: 0.75em;
+    padding: 8px 4px;
+}
+
+.main-content {
+    margin-left: 310px;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffffff;
+    background-color: #494848;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 85%;
+    text-align: left;
+    padding-left: 15px;
+}
+p {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom:5%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1em;
+}
+@media print {
+    .controls, .navbar, .selector, .sidebar {
+        display: none;
+    }
+
+    #printArea {
+        display: block;
+        /*page-break-inside: avoid;*/
+    }
+    .footer {
+        display: inline-block;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}
+.selector {
+    color: #ffffff;
+}
+footer {
+    color: #808080;
+}
+.printA4 {
+    /*border: 1px solid #404040;*/
+    background-color: #ffffff;
+    width: 17cm;
+    height: 27.2cm;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+table, th, td {
+    border: 1px solid black;
+    padding: 3px;
+  }
+  table {
+    border-radius: 4px;
+  }
+  th, td { 
+    border-radius: 2px;
+}
+#paheader {
+    border-spacing: 30px; 
+  }
+
+.infocell{
+    border: none;
+    font-weight: bold;
+}  
+input.paheader {
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+
+input#sysTxt {
+    width: 80px;
+}
+input{
+    border:none;
+    border-radius: 2px;
+}
+    input.infocell {
+        border: none;
+        border-radius: none;
+        width: 99.5%;
+        height: 95%;
+        text-align: center;
+        font-size: 0.8em;
+
+    }
+input#numBoxesMain, input#numBoxesSide {
+    width: 100px;
+    text-align: center;
+}
+input#numPerCaseMain, input#numPerCaseSide {
+    width: 100px;
+    text-align: center;
+}
+
+#number {
+    width: 3em;
+}
+#addLogo {
+    display: none;
+}
+#loadTemplate {
+    display: none;
+}
+
+/*Columns v2*/
+.col-container {
+    display: table;
+    width: 100%;
+}
+
+.col {
+    display: table-cell;
+    padding: 4px;
+    background-color: #ffffff;
+}
+/*Auto Increment PA Table Cabinet #*/
+.patable {
+    counter-reset: rowNumber;
+}
+
+    .patable tr > td:first-child {
+        counter-increment: rowNumber;
+        text-align: right;
+    }
+
+    .patable tr td:first-child::before {
+        content: counter(rowNumber);
+    }
+
+/*Header Table Formatting*/
+.headertbl {
+    width: 90%;
+    margin: auto;
+    border: none;
+    height: 30%;
+}
+td.logo {
+    width: 100px;
+    border: none;
+}
+
+#logo {
+    width: 80px;
+    height: 70px;
+    padding-top: 3px;
+    padding-right: 10px;
+}
+
+.infocellid {
+    text-align: center;
+    width: 180px;
+    border: none;
+    /*border: 1px solid #404040;*/
+}
+td.infocellid {
+    width: 20%;
+    font-weight: bold;
+}
+/* input.infocell {
+    border: 1px solid #404040;
+
+} */
+.infocell { 
+
+    text-align: right;
+    border-right: 1px solid black;
+}
+
+
+
+        /*PA Table Input box formatting*/
+.patablehead, .patable {
+    border: 2px solid #404040;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    padding: 3px;
+   
+}
+input.paheader {
+    width: 100%;
+}
+.paheader {
+    
+    font-size: larger;
+} 
+
+/* PA point formatting: font and left alignment for FRONT/REAR label inputs */
+.papoint {
+
+    font-size: 10px;
+    text-align: left;
+    width: 100%;
+    height: 15px;
+    font-weight: bold;
+}
+
+#mainpatbl, #sidepatbl {
+    border-top: none;
+}
+#mainpatblhead, #sidepatblhead {
+    border-bottom: none;
+}
+#mainpatblhead, #mainpatbl {
+    table-layout: fixed;
+    width: 100%;
+}
+#sidepatblhead, #sidepatbl {
+    table-layout: fixed;
+    width: 100%;
+}
+.type {
+    border: 1px solid #404040;
+
+    width: 70px;
+}
+.splay {
+    border: 1px solid #404040;
+ 
+    width: 70px;
+}
+.cabinet {
+    width: 14%;
+    text-align: center;
+}
+.cabinet  td {
+    text-align:left ;
+    font-size: 0.9em;
+
+}
+.type td {   
+    font-size: 0.9em;
+}
+
+.splay td {   
+    font-size: 0.9em;
+}
+
+.circuit td {   
+    font-size: 0.9em;
+}
+
+th.cabinet  {
+    text-align:left ;
+}
+th.cabinet, th.type, th.splay, th.circuit {   
+    font-size: 11px;
+    height: 25px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+td.cabinet, tr.cabinet {
+    width: 14%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+td.type {
+    width: 20%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+td.splay {
+    width: 40%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+td.circuit {
+    width: 26%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+th.cabinet {
+    width: 14%;
+    text-align: center;
+}
+
+th.type {
+    width: 20%;
+}
+
+th.splay {
+    width: 40%;
+}
+
+th.circuit {
+    width: 26%;
+}
+.splay, .circuit, .type {
+    text-align: left;
+    border: 1px solid #404040;
+    border-radius: 2px;
+}
+input.type, input.splay, input.circuit {
+    border: none;
+    height:110%;
+    width: 60%;
+}
+input.type {
+    /*border: 1px solid #404040;*/
+    outline: none;
+    
+    width: 99%;
+    float: left;
+    text-align: center;
+    font-size: 1em;
+    margin: 0;
+    margin-right: 1px;
+}
+input.splay {
+    /*border: 1px solid #404040;*/
+    outline: none;
+    
+    width: 99%;
+    float: left;
+    text-align: center;
+    font-size: 1em;
+    margin: 0;
+    margin-right: 1px;
+}
+
+input.circuit {
+    /*border: 1px solid #404040;*/
+    outline: none;
+  
+    width: 99.5%;
+    float: left;
+    text-align: center;
+    font-size: 1em;
+    margin-right: 1px;
+}
+/*Blank Divider Formatting*/
+.blankrow {
+    height: 4px;
+    border-left: 1px solid #404040;
+    border-right: 1px solid #404040;
+}
+
+
+
+/*Rigging Table Formatting*/
+
+.rigtable {
+    border: 2px solid #404040;
+    border-collapse:separate;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%; 
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 5px;
+}
+.rigtable td {
+    height: 18px;
+}
+.rigcell {
+    font-size: 0.6em;
+    text-align: left;
+    width: 80px;
+    border: 1px solid #404040;
+    border-radius: 2px;
+}
+.rigcell1 {
+    border: 1px solid #404040;
+    
+}
+.rigcell2 {
+    
+    text-align: left;
+}
+/* Units cell formatting*/
+.unitscell {
+    font-size: 0.6em;
+    text-align: center;
+    width: 15px;
+    border: 1px solid #404040;
+    border-radius: 2px;
+}
+td.unitscell {
+    border: none;
+    text-align: left;
+}
+.unitscell2 {
+    font-size: 0.6em;
+    text-align: center;
+    width: 30px;
+    border: 1px solid #404040;
+    border-radius: 2px;
+}
+input.rig1 {
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    width: 99.5%;
+    float: left;
+    text-align: center;
+    font-size: 0.6em;
+    height: 20px;
+    margin: 0;
+}
+input.rig2 {
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 0.6em;
+    margin: 0;
+
+
+}
+.userrigcell {
+    border: 1px solid #404040;
+    border-radius: 2px;
+}
+input.userrig {
+    /*border: 1px solid #404040;*/
+    outline: none;
+    border-radius: 2px;
+    width: 80px;
+    float: left;
+    text-align: right;
+    font-size: 0.6em;
+    height: 100%;
+    margin: 0;
+    padding-right: 1px;
+}
+input.userunit {
+    /*border: 1px solid #404040;*/
+    outline: none;
+    border-radius: 2px;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 0.6em;
+    height: 100%;
+    margin: 0;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+    padding-left:10px;
+    height: 2.5rem; /* Footer height */
+}
+
+html { overflow: hidden; }
+::-webkit-scrollbar {
+    display: none;
+}
+

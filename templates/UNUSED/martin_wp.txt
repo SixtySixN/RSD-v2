@@ -1,0 +1,17 @@
+# Martin Audio Wavefront Precision Template
+# For Martin Audio Wavefront Precision series line arrays
+
+name=Martin Audio Wavefront Precision Series
+description=Martin Audio rigging template
+
+# PA Columns - show both type and circuit
+type=false
+circuit=true
+
+# Rigging Information
+rigcell=FRAME ANGLE | ° | true
+rigcell=TRIM HEIGHT | m | true
+rigcell=TRIM - STAGE | m | true
+rigcell=TOTAL WEIGHT | kg | true
+rigcell=FRONT LOAD | kg | true
+rigcell=REAR LOAD | kg | true

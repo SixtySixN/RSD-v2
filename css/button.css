@@ -1,0 +1,67 @@
+﻿/*Button Formating*/
+.button {
+    
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 2px;
+    border: 1px solid #404040;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 2px 2px;
+    cursor: default;
+    width: 100px;
+    transition-duration: 0.4s;
+}
+
+    .button:hover {
+        background-color: #367939;
+    }
+    .button:active {
+        background-color: lightslategrey;
+    }
+
+.button2 {
+    background-color: #4CAF50; /* Green */
+    border-radius: 2px;
+    border: 1px solid #404040;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 2px 2px;
+    cursor: default;
+    width: 60px;
+    transition-duration: 0.4s;
+}
+
+    .button2:hover {
+        background-color: #367939;
+    }
+
+
+.button2:active {
+    background-color: lightslategrey;
+}
+ .btn {
+    display: inline-block;
+    color: white;
+    border: none;
+    background-color: #808080;
+    text-align: right;
+    padding: 5px 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+        background-color: #404040;
+    }
+.btn:active {
+    background-color: lightslategrey;
+}
+

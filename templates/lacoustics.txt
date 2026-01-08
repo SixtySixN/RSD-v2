@@ -1,0 +1,17 @@
+# L-Acoustics Template
+# For L-Acoustics K/Kara series line arrays
+
+name=L-Acoustics K Series
+description=L-Acoustics rigging template with mechanical tilt
+
+# PA Columns - show both type and circuit
+type=true
+circuit=true
+
+# Rigging Information
+rigcell=FRAME ANGLE | ° | true
+rigcell=TRIM HEIGHT | m | true
+rigcell=TRIM - STAGE | m | true
+rigcell=TOTAL WEIGHT | kg | true
+rigcell=FRONT LOAD | kg | true
+rigcell=REAR LOAD | kg | true

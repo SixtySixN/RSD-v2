@@ -1,0 +1,17 @@
+{
+    "webexe_settings": {
+        "blacklist": "\n.git\n.vscode\n",
+        "custom_script": "",
+        "download_dir": "",
+        "export_dir": "C:/Users/sixty/Desktop/rsd_build",
+        "force_download": false,
+        "mac-x64": true,
+        "nw_compression_level": 0,
+        "nw_version": "0.45.3",
+        "output_pattern": "RSD",
+        "sdk_build": false,
+        "uncompressed_folder": false,
+        "whitelist": "",
+        "windows-x64": true
+    }
+}
