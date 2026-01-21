@@ -197,12 +197,12 @@ input#numPerCaseMain, input#numPerCaseSide {
     counter-reset: rowNumber;
 }
 
-    .patable tr > td:first-child {
+    .patable tr:not(.blankrow) > td:first-child {
         counter-increment: rowNumber;
         text-align: right;
     }
 
-    .patable tr td:first-child::before {
+    .patable tr:not(.blankrow) td:first-child::before {
         content: counter(rowNumber);
     }
 
@@ -415,8 +415,16 @@ input.circuit {
 /*Blank Divider Formatting*/
 .blankrow {
     height: 4px;
-    border-left: 1px solid #404040;
-    border-right: 1px solid #404040;
+    border: none !important;
+    background-color: transparent;
+}
+
+.blankrow td {
+    border: none !important;
+    padding: 0 !important;
+    height: 4px;
+    line-height: 4px;
+    background-color: transparent;
 }
 
 
@@ -478,7 +486,7 @@ input.rig1 {
     width: 99.5%;
     float: left;
     text-align: center;
-    font-size: 0.6em;
+    font-size: 1em;
     height: 20px;
     margin: 0;
 }
@@ -489,10 +497,19 @@ input.rig2 {
     width: 100%;
     float: left;
     text-align: center;
-    font-size: 0.6em;
+    font-size: 1em;
     margin: 0;
 
 
+}
+input.rig1::placeholder,
+input.rig2::placeholder,
+input.userrig::placeholder,
+input.userunit::placeholder {
+    font-size: clamp(0.4em, 1vw, 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .userrigcell {
     border: 1px solid #404040;
@@ -505,7 +522,7 @@ input.userrig {
     width: 80px;
     float: left;
     text-align: right;
-    font-size: 0.6em;
+    font-size: 1em;
     height: 100%;
     margin: 0;
     padding-right: 1px;
@@ -517,7 +534,7 @@ input.userunit {
     width: 100%;
     float: left;
     text-align: center;
-    font-size: 0.6em;
+    font-size: 1em;
     height: 100%;
     margin: 0;
 }

@@ -1,11 +1,18 @@
 {
-  "name": "Martin Audio Wavefront Precision",
+  "name": "Martin Audio WPS",
   "description": "Martin Audio WP series template",
   "paColumns": {
     "type": false,
     "circuit": true
   },
   "rigging": [
+            {
+      "label": "FRAME POSITION",
+      "unit": false,
+      "visible": true,
+      "placeholder": "FRONT  -  REAR",
+      "colspan": false
+    },
     {
       "label": "FRAME ANGLE",
       "unit": "°",
@@ -48,6 +55,13 @@
       "toggleId": "singlePoint",
       "placeholder": "HOLE#",
       "colspan": true
+    },
+        {
+      "label": "RESOULTION",
+      "unit": false,
+      "visible": true,
+      "placeholder": "1  -  2  -  3",
+      "colspan": false
     }
   ]
 }

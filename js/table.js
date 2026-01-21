@@ -48,6 +48,30 @@ function addRow(tableID) {
         newElem.setAttribute("type", "text");
         newCell.appendChild(newElem);
     }
+    
+    // Apply column visibility based on current template/checkbox settings
+    var isMainTable = (tableID === 'mainpatbl');
+    var isSideTable = (tableID === 'sidepatbl');
+    
+    if (isMainTable) {
+        var typeVisible = $('#typeColumnToggleMain').is(':checked');
+        var circuitVisible = $('#circuitColumnToggleMain').is(':checked');
+        if (!typeVisible && hasTypeCol) {
+            $(newRow).find('td.type').hide();
+        }
+        if (!circuitVisible && hasCircuitCol) {
+            $(newRow).find('td.circuit').hide();
+        }
+    } else if (isSideTable) {
+        var typeVisible = $('#typeColumnToggleSide').is(':checked');
+        var circuitVisible = $('#circuitColumnToggleSide').is(':checked');
+        if (!typeVisible && hasTypeCol) {
+            $(newRow).find('td.type').hide();
+        }
+        if (!circuitVisible && hasCircuitCol) {
+            $(newRow).find('td.circuit').hide();
+        }
+    }
 }
 /*Add multiple rows to PA Tables - v4 - blank row skipping fixed*/
 /* addMultiRows1 = Add to Main PA Table */
@@ -62,7 +86,7 @@ function addMultiRows1(tableID) {
 
     var rowCounter = 0;
     var rowsPerCase = parseInt(document.getElementById('numPerCaseMain').value);
-
+    
     // Process rows without adding blank rows where they already exist
     $('#mainpatbl > tbody > tr').each(function () {
         // Skip processing if this is already a blank row
@@ -74,7 +98,8 @@ function addMultiRows1(tableID) {
 
         // Add a blank row only after non-blank rows and ensure it doesn't duplicate
         if (rowCounter % rowsPerCase === 0 && !$(this).next().hasClass('blankrow')) {
-            $(this).after('<tr class="blankrow"></tr>');
+            var numColumns = $('#mainpatbl tbody tr:not(.blankrow):first td:visible').length || 3;
+            $(this).after('<tr class="blankrow"><td colspan="' + numColumns + '"></td></tr>');
         }
     });
 }
@@ -92,7 +117,7 @@ function addMultiRows2(tableID) {
 
     var rowCounter = 0;
     var rowsPerCase = parseInt(document.getElementById('numPerCaseSide').value);
-
+    
     // Process rows without adding blank rows where they already exist
     $('#sidepatbl > tbody > tr').each(function () {
         // Skip processing if this is already a blank row
@@ -104,7 +129,8 @@ function addMultiRows2(tableID) {
 
         // Add a blank row only after non-blank rows and ensure it doesn't duplicate
         if (rowCounter % rowsPerCase === 0 && !$(this).next().hasClass('blankrow')) {
-            $(this).after('<tr class="blankrow"></tr>');
+            var numColumns = $('#sidepatbl tbody tr:not(.blankrow):first td:visible').length || 3;
+            $(this).after('<tr class="blankrow"><td colspan="' + numColumns + '"></td></tr>');
         }
     });
 }
@@ -112,10 +138,18 @@ function addMultiRows2(tableID) {
 /* Add blank 'split' line to PA Tables */
 function addSplit(tableID) {
     var tableRef = document.getElementById(tableID);
+    if (!tableRef) return;
+    
+    // Calculate the number of visible columns based on the first non-blank row
+    var firstRow = $(tableRef).find('tbody tr:not(.blankrow):first');
+    var numColumns = firstRow.find('td:visible').length || 3;
+    
     var newRow = tableRef.insertRow(-1);
-
     newRow.setAttribute("class", "blankrow");
-    newRow.setAttribute("colspan", "4");
+    
+    // Add a single cell with colspan to span all columns
+    var newCell = newRow.insertCell(0);
+    newCell.setAttribute("colspan", numColumns.toString());
 }
 
 /* Delete last row from PA Tables */
