@@ -6,7 +6,7 @@
     "circuit": true
   },
   "rigging": [
-            {
+    {
       "label": "FRAME POSITION",
       "unit": false,
       "visible": true,
@@ -19,6 +19,14 @@
       "visible": true
     },
     {
+      "label": "SINGLE POINT",
+      "unit": "#",
+      "visible": false,
+      "toggleId": "singlePoint",
+      "placeholder": "",
+      "colspan": false
+    },
+    {
       "label": "TRIM - TOP",
       "unit": "m",
       "visible": true
@@ -28,7 +36,7 @@
       "unit": "m",
       "visible": true
     },
-        {
+    {
       "label": "TRIM - STAGE",
       "unit": "m",
       "visible": false
@@ -49,17 +57,10 @@
       "visible": true
     },
     {
-      "label": "SINGLE POINT",
-      "unit": false,
-      "visible": false,
-      "toggleId": "singlePoint",
-      "placeholder": "HOLE#",
-      "colspan": true
-    },
-        {
       "label": "RESOULTION",
       "unit": false,
       "visible": true,
+      "toggleId": "resolution",
       "placeholder": "1  -  2  -  3",
       "colspan": false
     }

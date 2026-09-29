@@ -12,6 +12,14 @@
       "visible": true
     },
     {
+      "label": "SINGLE POINT",
+      "unit": "#",
+      "visible": false,
+      "toggleId": "singlePoint",
+      "placeholder": "",
+      "colspan": false
+    },
+    {
       "label": "TRIM - TOP",
       "unit": "m",
       "visible": true
@@ -21,7 +29,7 @@
       "unit": "m",
       "visible": true
     },
-        {
+    {
       "label": "TRIM - STAGE",
       "unit": "m",
       "visible": false
@@ -40,14 +48,6 @@
       "label": "REAR LOAD",
       "unit": "kg",
       "visible": true
-    },
-    {
-      "label": "SINGLE POINT",
-      "unit": false,
-      "visible": false,
-      "toggleId": "singlePoint",
-      "placeholder": "HOLE#",
-      "colspan": true
     },
     {
       "label": "RESOULTION",
